@@ -1,4 +1,4 @@
-<html><head><base href="https://windows.com/windows-web">
+<html><head>
 <style>
 * {
     margin: 0;
@@ -110,6 +110,7 @@ body {
     font-size: 1.1rem;
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none; /* Important for button to be clickable */
 }
 
 .cta-button:hover {
@@ -200,7 +201,7 @@ body {
         <div class="hero-content">
             <h1 class="hero-title">Windows in Your Browser</h1>
             <p class="hero-subtitle">Experience the power of Windows, anywhere, anytime.</p>
-            <button class="cta-button">Try Windows Web</button>
+            <button class="cta-button" href="https://0alex1010.github.io/Windows-web/">Try Windows Web</button>
         </div>
     </section>
 
@@ -281,12 +282,6 @@ document.addEventListener('DOMContentLoaded', () => {
             card.style.transform = 'translateY(0)';
             card.style.background = 'rgba(255, 255, 255, 0.1)';
         });
-    });
-
-    // Make the "Try Windows Web" button go to the desired URL
-    const ctaButton = document.querySelector('.cta-button');
-    ctaButton.addEventListener('click', () => {
-        window.location.href = 'https://0alex1010.github.io/Windows-web/';
     });
 });
 </script>
