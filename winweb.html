@@ -1,0 +1,287 @@
+<html><head><base href="https://windows.com/windows-web">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #0078D4, #002050);
+    min-height: 100vh;
+    color: white;
+    overflow-x: hidden;
+}
+
+.navbar {
+    padding: 1rem 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+.windows-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    width: 24px;
+    height: 24px;
+}
+
+.logo-square {
+    background: white;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    text-align: center;
+    z-index: 1;
+    padding: 2rem;
+}
+
+.hero-title {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    background: linear-gradient(45deg, #ffffff, #91c3ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.cta-button {
+    background: white;
+    color: #0078D4;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.floating-windows {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.window-card {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 1rem;
+    animation: float 20s infinite linear;
+}
+
+@keyframes float {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(100px, 100px) rotate(180deg); }
+    100% { transform: translate(0, 0) rotate(360deg); }
+}
+
+.features {
+    padding: 4rem 2rem;
+    background: rgba(255, 255, 255, 0.05);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.feature-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.feature-description {
+    opacity: 0.9;
+    line-height: 1.6;
+}
+</style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="windows-logo">
+            <div class="logo-grid">
+                <div class="logo-square"></div>
+                <div class="logo-square"></div>
+                <div class="logo-square"></div>
+                <div class="logo-square"></div>
+            </div>
+            <span>Windows Web</span>
+        </div>
+        <div class="nav-links">
+            <a href="https://windows.com/features" class="nav-link">Features</a>
+            <a href="https://windows.com/download" class="nav-link">Download</a>
+            <a href="https://windows.com/support" class="nav-link">Support</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="floating-windows">
+            <!-- Generated dynamically by JavaScript -->
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">Windows in Your Browser</h1>
+            <p class="hero-subtitle">Experience the power of Windows, anywhere, anytime.</p>
+            <button class="cta-button">Try Windows Web</button>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <div class="feature-icon">🌐</div>
+            <h3 class="feature-title">Cross-Platform Access</h3>
+            <p class="feature-description">Access your Windows environment from any device with a web browser.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">⚡</div>
+            <h3 class="feature-title">Real-Time Sync</h3>
+            <p class="feature-description">Your files and settings, synchronized instantly across all your devices.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🔒</div>
+            <h3 class="feature-title">Enterprise Security</h3>
+            <p class="feature-description">Enterprise-grade security with advanced encryption and authentication.</p>
+        </div>
+    </section>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const floatingWindows = document.querySelector('.floating-windows');
+    
+    // Create floating window elements
+    for (let i = 0; i < 5; i++) {
+        const window = document.createElement('div');
+        window.className = 'window-card';
+        window.style.left = `${Math.random() * 100}%`;
+        window.style.top = `${Math.random() * 100}%`;
+        window.style.width = `${Math.random() * 200 + 100}px`;
+        window.style.height = `${Math.random() * 150 + 100}px`;
+        window.style.animationDelay = `${Math.random() * 10}s`;
+        floatingWindows.appendChild(window);
+    }
+
+    // Parallax effect for floating windows
+    document.addEventListener('mousemove', (e) => {
+        const cards = document.querySelectorAll('.window-card');
+        const mouseX = e.clientX / window.innerWidth - 0.5;
+        const mouseY = e.clientY / window.innerHeight - 0.5;
+
+        cards.forEach((card, index) => {
+            const depth = (index + 1) * 0.2;
+            const moveX = mouseX * depth * 100;
+            const moveY = mouseY * depth * 100;
+            card.style.transform = `translate(${moveX}px, ${moveY}px) rotate(${moveX * 0.1}deg)`;
+        });
+    });
+
+    // Animate CTA button on hover
+    const ctaButton = document.querySelector('.cta-button');
+    ctaButton.addEventListener('mouseover', () => {
+        ctaButton.style.transform = 'translateY(-2px) scale(1.05)';
+    });
+    ctaButton.addEventListener('mouseout', () => {
+        ctaButton.style.transform = 'translateY(0) scale(1)';
+    });
+
+    // Smooth scroll for navigation links
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const href = link.getAttribute('href');
+            window.location.href = href;
+        });
+    });
+
+    // Add hover effect to feature cards
+    const featureCards = document.querySelectorAll('.feature-card');
+    featureCards.forEach(card => {
+        card.addEventListener('mouseover', () => {
+            card.style.transform = 'translateY(-5px)';
+            card.style.background = 'rgba(255, 255, 255, 0.15)';
+        });
+        card.addEventListener('mouseout', () => {
+            card.style.transform = 'translateY(0)';
+            card.style.background = 'rgba(255, 255, 255, 0.1)';
+        });
+    });
+});
+</script>
+</body></html>
